@@ -1,4 +1,4 @@
-# actions
+# Github Actions
 Collection of Github actions used in several repositories
 
 - `python-run`: Run commands line by line given as a list in the `args` option in the workflow file in a Python environment (environment variables `PYTHON_VERSION` and `PIP_PACKAGES` determin the Python version and the packages to install via pip, respectively).
