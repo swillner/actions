@@ -3,16 +3,17 @@ VERSION="${GITHUB_REF/refs\/tags\/v/}"
 
 # awk code to get description of the release from CHANGELOG.rst.
 # Assumes that the changelog uses captions with the exact version
-# number and a ~ type header (i.e. underline with ~ after the line
-# with the version number)
+# number.
 GET_DESCRIPTION_AWK_CODE=$(cat <<EOF
 BEGIN {do_print=0}
 {
     if (\$0 == "${VERSION}") {
-        do_print=1;
+        do_print = 1;
     } else {
-        if (do_print && \$0 != "" && \$0 !~ /~+/) {
-            if (\$0 ~ /[~\\- ].*/) {
+        if (do_print == 1) {
+            do_print = 2; # Skip header underline
+        } else if (do_print == 2 && \$0 != "") {
+            if (\$0 ~ /[\\- ].*/) {
                 printf "%s\\\\n",\$0;
             } else {
                 exit;
