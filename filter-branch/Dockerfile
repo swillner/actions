@@ -1,4 +1,6 @@
-FROM debian:stable-slim
+FROM alpine:latest
+
+RUN apk add --no-cache git
 
 LABEL "com.github.actions.name"="Filter branch"
 LABEL "com.github.actions.description"="Filter for a branch (regardless of event ref)"
