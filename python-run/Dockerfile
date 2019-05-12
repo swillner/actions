@@ -1,5 +1,4 @@
-ARG PYTHON_VERSION=latest
-FROM python:$PYTHON_VERSION
+FROM python:2.7
 
 RUN pip install --upgrade pip
 
