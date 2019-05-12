@@ -13,6 +13,6 @@ Collection of Github actions used in several repositories
   (useful, for instance, for triggers other than ``push``).
 - `python-run <python-run>`_: Run commands line by line given as a
   list in the ``args`` option in the workflow file in a Python
-  environment (environment variables ``PYTHON_VERSION`` and
-  ``PIP_PACKAGES`` determin the Python version and the packages to
-  install via pip, respectively).
+  environment; the environment variable ``PIP_PACKAGES`` install takes
+  a list of packages to install via pip. Use tags "python-2.7" and
+  "python-3.7" for specific Python versions.
