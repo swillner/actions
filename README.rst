@@ -16,3 +16,9 @@ Collection of Github actions used in several repositories
   environment; the environment variable ``PIP_PACKAGES`` install takes
   a list of packages to install via pip. Use tags "python-2.7" and
   "python-3.7" for specific Python versions.
+- `multi-python-run <multi-python-run>`_: Like the ``python-run``
+  action but supports the environment variable ``PYTHON_VERSION`` as a
+  (space-separated) list of Python version to run consecutively. It
+  creates an inner docker container so environment variables (beyond
+  the standard Github Actions variables) have to specified in the
+  ``ENV`` variable.
